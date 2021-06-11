@@ -1,0 +1,24 @@
+<!--
+  ~ Copyright (c) 2021 iChochy
+  ~ URL:https://ichochy.com
+  ~ Date:2021/06/10 19:44:10
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<h1>Form</h1>
+<form th:action="@{/form}" th:object="${form}" method="post">
+    <p>Id: <br><input type="text" th:field="*{id}"/></p>
+    <p>Title:<br> <input type="text" th:field="*{title}"/></p>
+    <p>URL: <br><input type="text" th:field="*{url}"/></p>
+    <p>Message: <br><textarea th:field="*{content}"></textarea></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+
+</body>
+</html>

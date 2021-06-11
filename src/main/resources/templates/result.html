@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright (c) 2021 iChochy
+  ~ URL:https://ichochy.com
+  ~ Date:2021/06/10 19:44:10
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+<h1>Form</h1>
+<h1>Result</h1>
+<p th:text="'Id: ' + ${form.id}"/>
+<p th:text="'Title: ' + ${form.title}"/>
+<p th:text="'URL: ' + ${form.url}"/>
+<p th:text="'Message: ' + ${form.content}"/>
+<a href="/form">Submit another message</a>
+
+</body>
+</html>

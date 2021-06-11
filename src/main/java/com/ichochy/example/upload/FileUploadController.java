@@ -24,13 +24,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping(value = "/upload")
 public class FileUploadController {
 
     @Autowired
     private StorageService storageService;
 
-    @GetMapping(value = "")
+    @GetMapping(value = "/upload")
     public String listFiles(Model model){
         model.addAttribute("files", storageService.loadAll().map(
                 path -> MvcUriComponentsBuilder.fromMethodName(FileUploadController.class,
@@ -46,7 +45,7 @@ public class FileUploadController {
                 "attachment; filename=\"" + file.getFilename() + "\"").body(file);
     }
 
-    @PostMapping(value = "")
+    @PostMapping(value = "/upload")
     public String uploadFile(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes){
         storageService.store(file);
