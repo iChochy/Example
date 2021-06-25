@@ -11,6 +11,11 @@ public class Greeting {
     private String content;
 
     /**
+     * JSON 转换时需要无参构造方法
+     */
+    public Greeting() {}
+
+    /**
      * 用参的构造方法
      * @param id
      * @param content
