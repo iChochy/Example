@@ -13,11 +13,29 @@
 <body>
 <h1>Form</h1>
 <form th:action="@{/form}" th:object="${form}" method="post">
-    <p>Id: <br><input type="text" th:field="*{id}"/></p>
-    <p>Title:<br> <input type="text" th:field="*{title}"/></p>
-    <p>URL: <br><input type="text" th:field="*{url}"/></p>
-    <p>Message: <br><textarea th:field="*{content}"></textarea></p>
-    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+    <p>Id:</p>
+    <p>
+        <input type="text" th:field="*{id}"/>
+        <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+    </p>
+    <p>Title:</p>
+    <p>
+        <input type="text" th:field="*{title}"/>
+        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+    </p>
+    <p>URL: </p>
+    <p>
+        <input type="text" th:field="*{url}"/>
+        <span th:if="${#fields.hasErrors('url')}" th:errors="*{url}"></span>
+    </p>
+    <p>Message: </p>
+    <p>
+        <textarea th:field="*{content}"></textarea>
+        <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+    </p>
+    <p>
+        <input type="submit" value="Submit"/> <input type="reset" value="Reset"/>
+    </p>
 </form>
 
 </body>

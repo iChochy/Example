@@ -9,9 +9,11 @@ package com.ichochy.example.form;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
 
 @Controller
 public class FormController {
@@ -34,8 +36,11 @@ public class FormController {
      * @return
      */
     @PostMapping(value = "/form")
-    public String submitForm(@ModelAttribute Form form, Model model) {
+    public String submitForm(@Valid Form form, BindingResult bindingResult, Model model) {
         model.addAttribute("form", form);
+        if(bindingResult.hasErrors()){
+            return "form";
+        }
         return "result";
     }
 

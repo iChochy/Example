@@ -6,14 +6,22 @@
 
 package com.ichochy.example.form;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 /**
  * 表单信息
  */
 public class Form {
 
+    @NotNull
     private long id;
+    @NotBlank
     private String title;
+    @Pattern(regexp = "https://\\w+.com")
     private String url;
+    @NotBlank
     private String content;
 
     public long getId() {
