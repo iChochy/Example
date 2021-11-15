@@ -2,7 +2,7 @@
 
 [https://ichochy.com](https://ichochy.com)
 
-## Example
+## Spring Example
 
 - Hello World：[https://ichochy.com/posts/20210525.html](https://ichochy.com/posts/20210525.html)
 - 表单提交：[https://ichochy.com/posts/20210530.html](https://ichochy.com/posts/20210530.html)
